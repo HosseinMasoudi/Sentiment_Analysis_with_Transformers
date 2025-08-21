@@ -1,15 +1,15 @@
-Sentiment Analysis Project
+## Sentiment Analysis Project
 
 
 
 Sentiment Analysis Project (Two-Class) Using Fine-Tuning the ParsBERT Model
 
-Dataset:
+### Dataset:
 
 
 This dataset is related to Snap comments, which are initially used to collect student feedback on instructor evaluations.
 
-Hazm Library Problem:
+### Hazm Library Problem:
 
 
 This is where some of the Hazm prerequisites do not match the TensorFlow prerequisites. In essence, this is why we use Environment\
@@ -18,7 +18,7 @@ so that if someone else wants to run the model, the required requirements are au
 Hazm is not compatible with numpy>=1.26.4, but it can be installed in Linux and MacOs environments, and given that MacO processors are suitable\
 for Deep Learning processing and we need a GPU to train the model, I started writing the normalizer function.
 
-The normalizer function (JackageNormalizer:
+### The normalizer function (JackageNormalizer:
 
 
 consists of 9 parts that perform the normalization process in order:
@@ -34,7 +34,7 @@ consists of 9 parts that perform the normalization process in order:
 .Remove_stopwords
 ```
 
-Model execution:
+### Model execution:
 In order to solve the normalization problem, we ran the model on the GoogleColab T4 GPU
 Then we start preprocessing the unclean data of the dataset to prepare it for training the model.
 
@@ -57,7 +57,7 @@ Epoch 3/3
 ```
 From the model output, it can be concluded that the model is overfitting after epoch 2
 
-UI creation:
+### UI creation:
 
 
 The last part of the project, which is related to creating a front for the model, we create a page with the help of the streamlit library for the user to enter their text input.
@@ -67,7 +67,7 @@ The text input is processed before sending to model 2:
 1. Normalization
 2. Spell correction
 
-Spelling correction:
+### Spelling correction:
 
 
 Since there is a possibility of spelling errors in the sent data, we solved this problem by sending an API call
