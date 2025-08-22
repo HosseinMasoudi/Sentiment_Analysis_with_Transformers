@@ -1,0 +1,21 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Environment files (secrets, configs)
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+out/
+target/
