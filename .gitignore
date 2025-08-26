@@ -5,6 +5,11 @@ Thumbs.db
 # Logs
 *.log
 
+# Python
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
 # Dependency directories
 node_modules/
 vendor/
@@ -19,3 +24,6 @@ dist/
 build/
 out/
 target/
+
+# Editors
+.vscode/
