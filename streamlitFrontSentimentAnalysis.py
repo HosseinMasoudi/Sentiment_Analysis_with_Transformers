@@ -6,7 +6,7 @@ st.set_page_config(
     layout="centered", page_title="SentimentAnalysis", page_icon="🧠"
 )
 
-API_KEY = "Fill in this section with your own key."
+API_KEY = "LWVKFRO75M8KHTT2BH2KJDFWJMX4DRCY"
 URL = "https://api.sapling.ai/api/v1/spellcheck"
 
 # API Function to get spellcheck Call
@@ -78,7 +78,7 @@ def user_input_features():
             st.session_state["normalized_text"] = normalized_text
             st.session_state["suggestions"] = get_spellcheck_suggestions(normalized_text)
             st.session_state.final_text = ""
-
+            
 # Streamlit UI
 st.title("NLP : SentimentAnalysis")
 
@@ -89,7 +89,8 @@ The model used in this project is a Persian transformer model called ParsBERT,\
     which has been fine-tuned for the purpose of sentiment analysis based on Persian data.
     """)
 
-text = user_input_features()
+# Assigning result of a function call, where the function has no return value
+main_TEXT = user_input_features()
 
 if "suggestions" in st.session_state and st.session_state["suggestions"]:
     correction_ui()

@@ -36,7 +36,7 @@ def remove_keshide(text):
     return re.sub(r'(ـ)+', '', text)
 
 # Read the stopwords file and put each word into a list
-with open("/Users/hossein/Desktop/Hos/CODE/NLP/Transformes/Persian_StopList.txt", encoding="utf-8") as file:
+with open("./Persian_StopList.txt", encoding="utf-8") as file:
     stopwords = [line.strip() for line in file if line.strip()]
 
 def remove_stopwords(text):
