@@ -71,6 +71,7 @@ def convert_numbers_to_words(text):
 
 def normalize_persian_text(text):
     text = normalize_unicode(text)
+    text = remove_stopwords(text)
     text = remove_unwanted_characters(text)
     text = convert_numbers(text, to_english=True)
     text = convert_numbers_to_words(text)
@@ -78,7 +79,6 @@ def normalize_persian_text(text):
     text = remove_keshide(text)
     text = remove_punctuation(text)
     text = fix_persian_zwnj(text)
-    text = remove_stopwords(text)
     return text
 
 print("Normalizer module loaded successfully.")
