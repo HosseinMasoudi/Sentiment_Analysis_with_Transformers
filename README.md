@@ -57,6 +57,14 @@ Epoch 3/3
 ```
 From the model output, it can be concluded that the model is overfitting after epoch 2
 
+### Adam vs AdamW
+
+AdamW is a variant of the Adam optimizer that separates weight decay from the gradient update based on the observation that the weight decay formulation is different when applied to SGD and Adam.
+
+When to Choose Adam: You can use Adam for quick prototyping or simpler tasks where regularization is not crucial. It may converge faster initially but can suffer from poor generalization due to interference from weight decay.
+
+When to Choose AdamW: In case you have larger models or when training on complex, high-dimensional data, it’s better to choose AdamW, because the decoupled weight decay helps achieve better generalization and stable convergence.
+
 ### UI creation:
 
 
