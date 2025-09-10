@@ -118,7 +118,7 @@ Epoch 4/5
 Epoch 5/5
 2887/2887 [==============================] - 415s 144ms/step - loss: 0.2965 - accuracy: 0.8770 - auc: 0.9428 - precision: 0.9121 - recall: 0.8401 - val_loss: 0.3180 - val_accuracy: 0.8667 - val_auc: 0.9375 - val_precision: 0.8957 - val_recall: 0.8364 - lr: 5.0000e-06
 ```
-From the model output, it can be concluded that the model is overfitting after epoch 2
+From the model output, it can be concluded that the model is overfitting after epoch 3
 
 ### Adam vs AdamW
 
