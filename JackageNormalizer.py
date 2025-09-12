@@ -1,4 +1,3 @@
-import string
 import re
 import unicodedata
 from num2fawords import words
@@ -46,15 +45,16 @@ def remove_stopwords(text):
 
 def fix_persian_zwnj(text):
     """Fix ZWNJ (Zero Width Non-Joiner) issues in Persian text"""
-    text = re.sub(r'\b(ن?می|خواه(?:م|ی|د|یم|ید|ند))[\s‌]+', r'\1‌', text)
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'([آ-ی])‌([آ-ی])', r'\1\2', text)
+    text = re.sub(r'\s‌+', '‌', text)
+    text = re.sub(r'‌\s', '‌', text)
 
     suffixes = ['تر', 'ترین', 'ها', 'های', 'ام', 'ات', 'اش', 'ای', 'اید', 'ایم', 'اند', 'ایی', 'مان', 'تان', 'شان']
     suffix_pattern = r'(\S+)[\s‌]+(' + '|'.join(suffixes) + r')\b'
     
     text = re.sub(suffix_pattern, r'\1‌\2', text)
-
     text = re.sub(r'(\d+)[\s‌]+([آ-ی]+)', r'\1‌\2', text)
-
     text = re.sub(r'([آ-ی]+)[\s‌]+(پوش|دوست|گونه|نما|فام|سان|گر|کار|مند|ساز|تر|وار)\b', r'\1‌\2', text)
     return text
 
