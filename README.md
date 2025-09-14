@@ -30,7 +30,16 @@ The well-known **Hazm** library (for Persian NLP) had compatibility issues with 
 9. Remove stopwords
 
 ---
+Set TensorFlow to use the legacy Keras implementation for compatibility.
 
+- Uses `TF_USE_LEGACY_KERAS=1` so TensorFlow routes Keras APIs to the legacy Keras package. This can avoid serialization/saving/loading mismatches between tf.keras 3.x and older code.
+
+```python
+import os
+
+os.environ['TF_USE_LEGACY_KERAS'] = '1'
+```
+---
 ## Model Architecture
 The architecture integrates **ParsBERT embeddings** with a neural classification head:
 
