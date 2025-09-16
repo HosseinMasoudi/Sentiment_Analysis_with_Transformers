@@ -5,7 +5,7 @@ This project focuses on **Sentiment Analysis (Binary Classification)** using a f
 ---
 
 ## Dataset
-- **Source**: Snap comments dataset (originally used for collecting student feedback on instructor evaluations).
+- **Source**: Snapp comments dataset (originally used for collecting student feedback on instructor evaluations).
 - **Language**: Persian (Farsi).
 - **Challenges**: Raw data included noise, inconsistent spellings, stopwords, and special characters.
 - **Preprocessing**: Applied a **custom JackageNormalizer** function.
@@ -131,3 +131,12 @@ This step significantly improved model accuracy on noisy input.
 - Add **data augmentation** for better generalization.
 - Deploy as a **Hugging Face model** with a pipeline for wider access.
 ---
+
+```@article{ParsBERT,
+    title={ParsBERT: Transformer-based Model for Persian Language Understanding},
+    author={Mehrdad Farahani, Mohammad Gharachorloo, Marzieh Farahani, Mohammad Manthouri},
+    journal={ArXiv},
+    year={2020},
+    volume={abs/2005.12515}
+}
+```
