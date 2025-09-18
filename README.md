@@ -9,6 +9,8 @@ This project focuses on **Sentiment Analysis (Binary Classification)** using a f
 - **Language**: Persian (Farsi).
 - **Challenges**: Raw data included noise, inconsistent spellings, stopwords, and special characters.
 - **Preprocessing**: Applied a **custom JackageNormalizer** function.
+- **shape**: (65973, 4)
+- **columns**: (comment, label, comment_length, comment_cleaned)
 
 ---
 
@@ -30,16 +32,25 @@ The well-known **Hazm** library (for Persian NLP) had compatibility issues with 
 9. Remove stopwords
 
 ---
+
+## Tokenizer
+
+Since NLP models process numeric data, not text, there must be a translation between text and tokens. A token is an integer that represents a character or a short segment of characters. On the input side, the input text is parsed into a sequence of tokens. Similarly, on the output side, the output tokens are parsed into text. The module that performs the conversion between texts and token sequences is a tokenizer, and each model on the Hugging Face site has its own tokenizer, which we use to tokenize the ParsBERT model for our data.
+The (model_tokenizer) converts each text into token IDs and generates the required attention masks.specifies that any text longer than the maximum length will be truncated with using (truncation=True) and with using (padding=True) ensures that all sequences are padded to the same length.
+
+---
+
+## Model learning environment
 Set TensorFlow to use the legacy Keras implementation for compatibility.
 
 - Uses `TF_USE_LEGACY_KERAS=1` so TensorFlow routes Keras APIs to the legacy Keras package. This can avoid serialization/saving/loading mismatches between tf.keras 3.x and older code.
 
 ```python
 import os
-
 os.environ['TF_USE_LEGACY_KERAS'] = '1'
 ```
 ---
+
 ## Model Architecture
 The architecture integrates **ParsBERT embeddings** with a neural classification head:
 
