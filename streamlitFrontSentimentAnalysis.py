@@ -16,7 +16,7 @@ st.set_page_config(
     layout="centered", page_title="SentimentAnalysis", page_icon="🧠"
 )
 
-API_KEY = "R80X16GG098GCNV5FR99PP9UC4BNKWQI"
+API_KEY = "your_api_key_here"
 URL = "https://api.sapling.ai/api/v1/spellcheck"
 MODEL_NAME = "HooshvareLab/bert-fa-base-uncased"
 MODEL_PATH = "/Users/hossein/Desktop/Hos/CODE/NLP/SentimentAnalyis_model/saved_model_tf"
